@@ -5,48 +5,67 @@
   box-sizing: border-box;
 }
 
-/* body */
+/*  body  */
 body {
-  background-color: #143f6b;
+  background-color: #000000;
   margin: 0;
   min-height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+/*  button  */
+button#playSong {
+  margin-top: 20px; 
+  padding: 10px 20px;
+  font-size: 16px;
+  color: rgb(0, 255, 255);
+  background-color: rgb(0, 0, 0);
+  border: 2px solid rgb(0, 255, 255);
+  box-shadow:  0 0 10px rgb(0, 255, 255);
+  /* cursor: pointer; */
 }
 
 /*  piano  */
 .piano {
   display: flex;
+  border: 3px solid rgb(0, 255, 255);
+  box-shadow:  0 0 10px rgb(0, 255, 255);
 }
 
-/* key */
+/* keys + key states */
 .key {
   height: calc(var(--width) * 4);
   width: var(--width);
+  border: 3px solid rgb(0, 255, 255);
+  /* box-shadow:  0 0 10px rgb(0, 255, 255); */
 }
 
-/* w keys */
 .white {
   --width: 100px;
-  background-color: white;
-  border: 1px solid #333;
+  background-color: rgb(0, 0, 0);
+  /* border: 3px solid #333; */
 }
 
-/* b keys */
+.white.active {
+  border: 6px solid rgb(255, 0, 255);
+  /* box-shadow: inset 0 0 15px rgb(255, 0, 255); */
+  box-shadow: 0 0 15px rgb(255, 0, 255);
+}
+
 .black {
   --width: 60px;
-  background-color: black;
+  background-color: #000000;
+  box-shadow: inset 0 0 0 3px rgb(0, 255, 255);
   margin-left: calc(var(--width) / -2);
   margin-right: calc(var(--width) / -2);
   z-index: 2;
 }
 
-/* states */
-.white.active {
-  background-color: #ccc;
-}
-
 .black.active {
-  background-color: #333;
+  border: 5px solid rgb(255, 0, 255);
+  /* box-shadow: inset 0 0 15px rgb(255, 0, 255); */
+  box-shadow: 0 0 15px rgb(255, 0, 255);
 }
